@@ -18,6 +18,7 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
+	"io"
 	"net/http"
 	"strings"
 	"sync"
@@ -42,6 +43,17 @@ func NewIncomingRequest(req *http.Request) *IncomingRequest {
 		TLS:    req.TLS,
 		URL:    &URL{url: req.URL},
 	}
+}
+
+// Body returns the request body reader. It is always non-nil but will return
+// EOF immediately when no body is present.
+func (r *IncomingRequest) Body() io.ReadCloser {
+	return r.req.Body
+}
+
+// Method returns the HTTP method of the request.
+func (r *IncomingRequest) Method() string {
+	return r.req.Method
 }
 
 // Host returns the host the request is targeted to.

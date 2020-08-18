@@ -19,10 +19,13 @@ package safehttp
 type StatusCode int
 
 const (
-	StatusOK                  StatusCode = 200 // RFC 7231, 6.3.1
-	StatusMovedPermanently    StatusCode = 301 // RFC 7231, 6.4.2
-	StatusBadRequest          StatusCode = 400 // RFC 7231, 6.5.1
-	StatusUnauthorized        StatusCode = 401 // RFC 7231, 3.1
-	StatusForbidden           StatusCode = 403 // RFC 7231, 6.5.3
-	StatusInternalServerError StatusCode = 500 // RFC 7231, 6.6.1
+	StatusOK                   StatusCode = 200 // RFC 7231, 6.3.1
+	StatusNoContent                       = 204 // RFC 7231, 6.3.5
+	StatusMovedPermanently                = 301 // RFC 7231, 6.4.2
+	StatusBadRequest                      = 400 // RFC 7231, 6.5.1
+	StatusUnauthorized                    = 401 // RFC 7231, 3.1
+	StatusForbidden                       = 403 // RFC 7231, 6.5.3
+	StatusMethodNotAllowed                = 405 // RFC 7231, 6.5.5
+	StatusUnsupportedMediaType            = 415 // RFC 7231, 6.5.13. RFC 7694, 3.
+	StatusInternalServerError             = 500 // RFC 7231, 6.6.1
 )

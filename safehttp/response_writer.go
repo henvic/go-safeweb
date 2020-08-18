@@ -71,6 +71,12 @@ func (w *ResponseWriter) WriteTemplate(t Template, data interface{}) Result {
 	return Result{written: true}
 }
 
+// NoContent responds with a 204 No Content response.
+func (w *ResponseWriter) NoContent() Result {
+	w.rw.WriteHeader(http.StatusNoContent)
+	return Result{written: true}
+}
+
 // ClientError TODO
 func (w *ResponseWriter) ClientError(code StatusCode) Result {
 	if code < 400 || code >= 500 {
