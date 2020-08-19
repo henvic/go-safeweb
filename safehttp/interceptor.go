@@ -21,5 +21,5 @@ type Interceptor interface {
 	// Before runs before the IncomingRequest is sent to the handler. If a
 	// response is written to the ResponseWriter, then the remaining
 	// interceptors and the handler won't execute.
-	Before(w ResponseWriter, r *IncomingRequest) Result
+	Before(*ResponseWriter, *IncomingRequest) Result
 }
