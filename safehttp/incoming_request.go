@@ -44,6 +44,11 @@ func NewIncomingRequest(req *http.Request) *IncomingRequest {
 	}
 }
 
+// Method returns the HTTP method of the request.
+func (r *IncomingRequest) Method() string {
+	return r.req.Method
+}
+
 // Host returns the host the request is targeted to.
 // TODO(@mihalimara22): Remove this after the safehttp.URL type has been
 // implemented.

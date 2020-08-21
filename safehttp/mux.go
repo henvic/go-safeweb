@@ -23,7 +23,10 @@ const (
 	// HTTP GET request
 	MethodGet = "GET"
 	// HTTP Post request
-	MethodPost = "POST"
+	MethodPost    = "POST"
+	MethodOptions = "OPTIONS"
+	MethodHead    = "HEAD"
+	MethodPut     = "PUT"
 )
 
 // ServeMux is an HTTP request multiplexer. It matches the URL of each incoming
